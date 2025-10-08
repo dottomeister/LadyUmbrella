@@ -129,11 +129,12 @@ some of the basics:
 There are, of course, more systems that haven't been mentioned yet, but are equally important, such as:
 
 - AI – Implemented using behaviour trees to dynamically change the way enemies interact with the player.
+- Camera System – A custom camera was required since increasing control for navigation and traversal is essential for the game.
 - Interactive Movement – Geometry-based motion to increase agility by allowing vaulting, mantling, swinging...
 - FMOD – Wide range of sounds in the game called for useage of this external tool that allowed for greater flexibility in sound design.
 
 ### 🤝 Acknowledgements
 ---
 
-All the playtesters who gave feedback on the game, from the earliest state to the end.
+All the playtesters who gave feedback on the game, from the earliest state to the end.<br />
 Everyone at Zulo Interactive who made this game possible.
