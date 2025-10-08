@@ -6,9 +6,9 @@
   <h1 align="center">☂️ Lady Umbrella ☂️</h1>
 </p>
 
-Lady Umbrella is a 3d action-adventure shooter in which the player plays the role of special agent Francesca De Angelis (aka Lady Umbrella) who, while infiltrating the last mafia family in Italy, is betrayed and incriminated by her partner and must now clear her name by preventing her own agency from arresting her and defeating the mafia using her main weapon: a shotgun umbrella that when opened functions as a shield and multiple gadgets.
+Lady Umbrella is a 3d action-adventure shooter in which the player plays the role of special agent Francesca De Angelis (aka Lady Umbrella) who, while infiltrating the last mafia family in Italy, is betrayed and incriminated by her partner. She must now clear her name by preventing her own agency from arresting her, and defeating the mafia using her main weapon: a high-tech shotgun umbrella that functions as a shield and contains multiple hidden gadgets.
 
-Switch between combat, traversal, and puzzle-solving tools — the umbrella isn’t just a weapon, it’s your lifeline.
+Switch between combat, traversal, and puzzle-solving — the umbrella isn’t just a weapon, it’s your lifeline.
 
 <img src="https://github.com/user-attachments/assets/4aee6508-691b-43ef-b264-813fc3abeb55" width="400">
 <img src="https://github.com/user-attachments/assets/cec211ad-5ac2-4f94-b322-ba4f90247155" width="400">
