@@ -22,7 +22,8 @@ Switch between combat, traversal, and puzzle-solving tools — the umbrella isn�
 ---
 
 This project was made in Unreal Engine 5.5.3, using C++ exclusively, except for some Blueprints used for material shaders,
-animation blueprints and small trigger events. It contains a lot of different gameplay systems:
+animation blueprints and small trigger events. It contains a lot of different gameplay systems, whereas I'd like to highlight
+some of the basics:
 
 - ## Combat System
 
@@ -31,7 +32,8 @@ animation blueprints and small trigger events. It contains a lot of different ga
 
   Shooting is a common ability used by both the player and the enemies, so it was places under the responsibility of the
   GenericWeapon, which is the parent of all weapons in the game. This way reusability is favoured, and reduces code
-  entanglement.
+  entanglement. It controls whether the weapon has enough bullets to actually be able to fire or not, and if it does,
+  reduces the ammo count by 1 and displays side effects (namely, particle & sound effects).
 
   ```c++
   bool AGenericWeapon::Fire()
@@ -42,27 +44,43 @@ animation blueprints and small trigger events. It contains a lot of different ga
     }
 
     AmmoCurrent--;
-	
-	  if (IsValid(MuzzleSmokeNiagaraComponent))
-	  {
-      MuzzleSmokeNiagaraComponent->ResetSystem();
-    }
+    MuzzleSmokeNiagaraComponent->ResetSystem();
 
-    const int32 RandParameter = FMath::RandRange(0, 9);
-
-    if (!IsValid(FireSoundFModComponent) || !IsValid(FireSoundFModComponent->GetFmodEvent()))
-    {
-      return false;
-    }
-
-    FireSoundFModComponent->SetParameter(*FmodEventParameterName, RandParameter);
+    FireSoundFModComponent->SetParameter(*FmodEventParameterName, FMath::RandRange(0, 9));
     FireSoundFModComponent->PlayEvent();
 
     return true;
   }
   ```
 
-- ## Interactive Movement
+  Reloading follows a similar idea, since it is something all weapons and characters in the game will use. It checks if
+  the weapon CAN be reloaded first, due to shortage of bullets for example, and if it can, simply calculates how many
+  bullets to reload by using the formula:
+
+  AmountToLoad = AmmoCurrentMax - AmmoCurrent
+
+  However, if the amount to load exceeds the AmmoReserve, then only load as many bullets as the weapon has left. For
+  example, if the weapon is currently at 10, and the max is 32, then the weapon needs to load 22 bullets, but the weapon
+  only has 10 bullet reserve remaining. In this case the amount to load gets clamped to 10, and updates the current bullet
+  amount to 20.
+
+  ```c++
+  bool AGenericWeapon::Reload(const bool ConsumeAmmo)
+  {
+    if (!CanReload())
+    {
+      return false;
+    }
+
+	const int32 Amount = FMath::Clamp(AmmoCurrentMax - AmmoCurrent, 0, AmmoReserve);
+
+	AmmoCurrent += Amount;
+    AmmoReserve -= Amount;
+	
+	return true;
+  }
+  ```
+
 - ## Upgrade System
 
   Throughout the game there are workbenches which allow the player to upgrade both the offensive and defense capabilities
@@ -107,3 +125,18 @@ animation blueprints and small trigger events. It contains a lot of different ga
   achievement using the function displayed above. Since this neither affects gameplay directly, and Steamworks use
   asynchronous functions for networking, it is not required to wait for a response from Valve's servers, making this
   an extremely efficient way to trigger achievements.
+
+### 🛠️ Other systems
+---
+
+There are, of course, more systems that haven't been mentioned yet, but are equally important, such as:
+
+- AI – Implemented using behaviour trees to dynamically change the way enemies interact with the player.
+- Interactive Movement – Geometry-based motion to increase agility by allowing vaulting, mantling, swinging...
+- FMOD – Wide range of sounds in the game called for useage of this external tool that allowed for greater flexibility in sound design.
+
+### 🤝 Acknowledgements
+---
+
+All the playtesters who gave feedback on the game, from the earliest state to the end.
+Everyone at Zulo Interactive who made this game possible.
