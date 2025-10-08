@@ -28,9 +28,9 @@ some of the basics:
 - ## Combat Mechanics
 
   The combat system is arguably Lady Umbrella's biggest system, since it handles everything from shooting, melee attacking,
-  launching grenades, _you name it_. To not make this section too big, lets focus on just two things, shooting & reloading
+  launching grenades, _you name it_. To not make this section too big, lets focus on just two things, **shooting** & **reloading**.
 
-  Shooting is a common ability used by both the player and the enemies, so it was places under the responsibility of the
+  _Shooting_ is a common ability used by both the player and the enemies, so it was places under the responsibility of the
   GenericWeapon, which is the parent of all weapons in the game. This way reusability is favoured, and reduces code
   entanglement.
 
@@ -52,7 +52,7 @@ some of the basics:
   }
   ```
 
-  Reloading follows a similar idea, since it is something all weapons and characters in the game will use. It checks if
+  _Reloading_ follows a similar idea, since it is something all weapons and characters in the game will use. It checks if
   the weapon CAN be reloaded first, due to shortage of bullets for example, and if it can, simply calculates how many
   bullets to reload by using the formula:
 
