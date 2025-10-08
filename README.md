@@ -25,7 +25,7 @@ This project was made in Unreal Engine 5.5.3, using C++ exclusively, except for 
 animation blueprints and small trigger events. It contains a lot of different gameplay systems, whereas I'd like to highlight
 some of the basics:
 
-- ## Combat System
+- ## Combat Mechanics
 
   The combat system is arguably Lady Umbrella's biggest system, since it handles everything from shooting, melee attacking,
   launching grenades, _you name it_. To not make this section too big, lets focus on just two things, shooting & reloading
