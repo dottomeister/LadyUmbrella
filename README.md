@@ -4,13 +4,8 @@
   <img width="3840" height="1240" alt="MainKeyArt" src="https://github.com/user-attachments/assets/9425deb8-efff-4c28-ba44-283b32dd4aea" />
   <br />
   <h1 align="center">☂️ Lady Umbrella ☂️</h1>
-  <p align="center">
-    Wield your high-tech umbrella to take down Italy’s last mafia family while evading capture by your own agency in this
-    thrilling third-person action-adventure shooter. <br />
-  </p>
 </p>
 
----
 Lady Umbrella is a 3d action-adventure shooter in which the player plays the role of special agent Francesca De Angelis
 (aka Lady Umbrella) who, while infiltrating the last mafia family in Italy, is betrayed and incriminated by her partner
 and must now clear her name by preventing her own agency from arresting her and defeating the mafia using her main weapon:
