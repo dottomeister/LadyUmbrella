@@ -32,8 +32,7 @@ some of the basics:
 
   Shooting is a common ability used by both the player and the enemies, so it was places under the responsibility of the
   GenericWeapon, which is the parent of all weapons in the game. This way reusability is favoured, and reduces code
-  entanglement. It controls whether the weapon has enough bullets to actually be able to fire or not, and if it does,
-  reduces the ammo count by 1 and displays side effects (namely, particle & sound effects).
+  entanglement.
 
   ```c++
   bool AGenericWeapon::Fire()
@@ -57,12 +56,10 @@ some of the basics:
   the weapon CAN be reloaded first, due to shortage of bullets for example, and if it can, simply calculates how many
   bullets to reload by using the formula:
 
-  AmountToLoad = AmmoCurrentMax - AmmoCurrent
-
-  However, if the amount to load exceeds the AmmoReserve, then only load as many bullets as the weapon has left. For
-  example, if the weapon is currently at 10, and the max is 32, then the weapon needs to load 22 bullets, but the weapon
-  only has 10 bullet reserve remaining. In this case the amount to load gets clamped to 10, and updates the current bullet
-  amount to 20.
+      AmountToLoad = AmmoCurrentMax - AmmoCurrent
+  
+  This makes the logic easily transferable to any weapon type in the game, as it is generic enough to be applicable to
+  all weapon types in the game.
 
   ```c++
   bool AGenericWeapon::Reload(const bool ConsumeAmmo)
