@@ -3,7 +3,14 @@
 <p align="center">
   <img width="3840" height="1240" alt="MainKeyArt" src="https://github.com/user-attachments/assets/9425deb8-efff-4c28-ba44-283b32dd4aea" />
   <br />
-  <h1 align="center">☂️ Lady Umbrella ☂️</h1>
+  <h1 align="center">☂️ Lady Umbrella ☂️
+	<br /><br />
+    <p>
+      <a href="https://store.steampowered.com/app/3956890/Lady_Umbrella/" target="_blank">
+	    <img src="https://img.shields.io/badge/Now%20on%20Steam-1b2838?style=for-the-badge&logo=steam&logoColor=white" alt="Play on Steam">
+      </a>
+    </p>
+  </h1>
 </p>
 
 Lady Umbrella is a 3d action-adventure shooter in which the player plays the role of special agent Francesca De Angelis (aka Lady Umbrella) who, while infiltrating the last mafia family in Italy, is betrayed and incriminated by her partner. She must now clear her name by preventing her own agency from arresting her, and defeating the mafia using her main weapon: a high-tech shotgun umbrella that functions as a shield and contains multiple hidden gadgets.
